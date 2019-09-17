@@ -17,14 +17,10 @@ steps:
 
 - script: |
     npm install
-    npm run build
-  displayName: 'npm install and build'
-
-- script: |
-    npm install
     npm run lint
     if [ $? -ne 0 ]; then
         exit 1
     fi
     npm run slint
     npm run build
+  displayName: 'npm install and build'
